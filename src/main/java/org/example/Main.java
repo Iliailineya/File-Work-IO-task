@@ -3,8 +3,8 @@ package org.example;
 import java.io.IOException;
 import java.util.Scanner;
 
-import static org.example.Constant.FILES_DIRECTORY;
-import static org.example.Constant.MENU;
+import static org.example.Constants.FILES_DIRECTORY;
+import static org.example.Constants.MENU;
 
 public class Main {
 
