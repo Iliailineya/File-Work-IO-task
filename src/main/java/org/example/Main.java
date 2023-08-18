@@ -22,31 +22,26 @@ public class Main {
             scanner.nextLine();
 
             switch (choice) {
-                case 1 -> createAndWriteToFile(scanner);
-                case 2 -> readFromFile(scanner);
+                case 1 -> createAndWrite(scanner);
+                case 2 -> read(scanner);
                 case 3 -> exit();
                 default -> System.out.println("Invalid choice. Please select again.");
             }
         }
     }
 
-    public static void createAndWriteToFile(Scanner scanner) {
-        var filename = getFilename(scanner);
-        var content = getContent(scanner);
-
+    public static void createAndWrite(Scanner scanner) {
         try {
-            FileWriteService.writeToFile(filename, content);
+            FileWriteService.writeToFile(getFilename(scanner), getContent(scanner));
             System.out.println("File created and written successfully.");
         } catch (IOException e) {
             System.out.println("An error occurred while creating/writing the file: " + e.getMessage());
         }
     }
 
-    public static void readFromFile(Scanner scanner) {
-        String filename = getFilename(scanner);
-
+    public static void read(Scanner scanner) {
         try {
-            String fileContent = FileReadService.readFromFile(filename);
+            String fileContent = FileReadService.readFromFile(getFilename(scanner));
             System.out.println("File content:\n" + fileContent);
         } catch (IOException e) {
             System.out.println("An error occurred while reading the file: " + e.getMessage());
