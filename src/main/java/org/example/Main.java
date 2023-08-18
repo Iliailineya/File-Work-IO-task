@@ -31,8 +31,8 @@ public class Main {
     }
 
     public static void createAndWriteToFile(Scanner scanner) {
-        String filename = getFilename(scanner);
-        String content = getContent(scanner);
+        var filename = getFilename(scanner);
+        var content = getContent(scanner);
 
         try {
             FileWriteService.writeToFile(filename, content);
